@@ -1,0 +1,4 @@
+database_url = "user=postgres password=password0701 dbname=golang sslmode=disable"
+Bind_adr = ":8080"
+log-lev = "debug"
+session_key = "werr45678yuirrt567tyur67y8tyu4567tyu657ytrtyu567tyut4t46e45644tert6d"
