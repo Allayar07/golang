@@ -31,6 +31,7 @@ func (h *Handler) Download(c *gin.Context) {
 	}
 
 	defer obj.Close()
+	//
 
 	c.JSON(http.StatusOK, map[string]interface{}{
 		"file": "ok. downloaded into uploads",
