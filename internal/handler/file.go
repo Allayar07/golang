@@ -4,6 +4,7 @@ import (
 	servicePKG "file_work/internal/service"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"mime/multipart"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -30,8 +31,9 @@ func (h *Handler) Download(c *gin.Context) {
 		return
 	}
 
-	defer obj.Close()
-	//
+	defer func(obj multipart.File) {
+		_ = obj.Close()
+	}(obj)
 
 	c.JSON(http.StatusOK, map[string]interface{}{
 		"file": "ok. downloaded into uploads",
