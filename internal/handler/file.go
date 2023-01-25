@@ -65,6 +65,20 @@ func (h *Handler) OpenFile(c *gin.Context) {
 		return
 	}
 
+	//pathPrefix := "C:/Users/Allayar/Desktop/file_work/uploads/"
+	//fullPath := pathPrefix + fileName
+	//
+	//file, err := os.Open(fullPath)
+	//if err != nil {
+	//	ErrorMessage(c, http.StatusInternalServerError, err.Error())
+	//	return
+	//}
+	//
+	//_, err = io.Copy(c.Writer, file)
+	//if err != nil {
+	//	log.Fatalln(err)
+	//}
+
 }
 
 // ChangeIMG  changing IMG parameters

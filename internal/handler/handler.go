@@ -26,16 +26,6 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		api.GET("/uploads/get/:any", h.ChangeIMG)
 	}
 
-	login := routes.Group("/sign_in")
-	{
-		login.POST("/login", h.signIn)
-	}
-
-	auth := routes.Group("/auth", h.AccessPage)
-	{
-		auth.POST("/admin", h.AdminHandler)
-	}
-
 	return routes
 
 }

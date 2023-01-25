@@ -1,17 +1,10 @@
 package service
 
 import (
-	"file_work/internal/model"
 	"file_work/internal/repository"
 	"io"
 	"mime/multipart"
 )
-
-type Admin interface {
-	Create(user model.Admin) (int, error)
-	GenerateToken() (string, error)
-	ParseToken(tokenString string) (string, error)
-}
 
 type File interface {
 	Remove(fileName string) error
@@ -21,13 +14,12 @@ type File interface {
 }
 
 type Service struct {
-	Admin
 	File
 }
 
 func NewService(repos *repository.Repository) *Service {
 	return &Service{
-		Admin: NewAdminService(repos.AdminRepo),
-		File:  NewFileService(),
+
+		File: NewFileService(),
 	}
 }
